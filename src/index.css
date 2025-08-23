@@ -1,0 +1,11 @@
+@import "tailwindcss";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  max-width: 1280px;
+}
