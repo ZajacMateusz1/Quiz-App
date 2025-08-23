@@ -1,11 +1,14 @@
 @import "tailwindcss";
-* {
-  box-sizing: border-box;
-}
-html {
-  background-color: #fafaf9;
-}
-:root {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
-  color: #1f2937;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  :root {
+    background-color: #fefefe;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    color: #1f2937;
+  }
 }
