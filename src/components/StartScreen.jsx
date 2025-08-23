@@ -1,3 +1,8 @@
+import Button from "./Button.jsx";
 export default function StartScreen() {
-  return <></>;
+  return (
+    <>
+      <Button>Start Quiz</Button>
+    </>
+  );
 }
