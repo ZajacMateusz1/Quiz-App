@@ -1,6 +1,6 @@
 import Button from "./Button.jsx";
 import startScreen from "../assets/StartScreen.png";
-export default function StartScreen() {
+export default function StartScreen({ changeGameStatus }) {
   return (
     <>
       <img
@@ -12,7 +12,7 @@ export default function StartScreen() {
         Challenge yourself with a fun math quiz full of calculations and logic
         puzzles to test your skills!
       </p>
-      <Button>Start Quiz</Button>
+      <Button onClick={changeGameStatus}>Start Quiz</Button>
     </>
   );
 }

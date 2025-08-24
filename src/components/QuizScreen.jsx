@@ -1,13 +1,21 @@
+import { useContext } from "react";
+import GameContext from "../store/game-context.jsx";
 import ControlButton from "./ControlButton.jsx";
+import QUESTIONS from "../QUESTIONS.json";
 export default function QuizScreen() {
+  const { currentIndex } = useContext(GameContext);
+  const question = QUESTIONS[currentIndex];
   return (
     <div className="bg-neutral-300 p-4 rounded-lg w-3/4">
-      <h3 className="mb-4 text-2xl font-bold">Pytanie 1</h3>
+      <h3 className="mb-4 text-2xl font-bold">{question.question}</h3>
       <div className="answers flex flex-col gap-2 mb-4">
-        <button className="bg-neutral-100 p-1 border">Odp 1</button>
-        <button className="bg-neutral-100 p-1 border">Odp 2</button>
-        <button className="bg-neutral-100 p-1 border">Odp 3</button>
-        <button className="bg-neutral-100 p-1 border">Odp 4</button>
+        {question.options.map((questionOption) => {
+          return (
+            <button key={questionOption} className="bg-neutral-100 p-1 border">
+              {questionOption}
+            </button>
+          );
+        })}
       </div>
       <div className="controlButtons flex justify-between">
         <ControlButton>Prev</ControlButton>

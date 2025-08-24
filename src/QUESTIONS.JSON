@@ -1,40 +1,48 @@
 [
   {
+    "id": 1,
     "question": "What is 12 × 8?",
     "options": ["84", "96", "108", "128"],
     "answer": "96"
   },
   {
+    "id": 2,
     "question": "If 5x = 45, what is x?",
     "options": ["5", "7", "9", "11"],
     "answer": "9"
   },
   {
+    "id": 3,
     "question": "Which number comes next in the sequence: 2, 4, 8, 16, … ?",
     "options": ["20", "24", "30", "32"],
     "answer": "32"
   },
   {
+    "id": 4,
     "question": "At 3:15, what is the smaller angle between the hour and minute hands?",
     "options": ["0°", "7.5°", "30°", "45°"],
     "answer": "7.5°"
   },
   {
+    "id": 5,
     "question": "A train travels 60 km in 1 hour 30 minutes. What is its average speed?",
     "options": ["30 km/h", "40 km/h", "60 km/h", "80 km/h"],
     "answer": "40 km/h"
   },
   {
+    "id": 6,
     "question": "If you rearrange the letters of “LISTEN”, which word can you also form?",
     "options": ["SILENT", "STONE", "LINES", "TILES"],
     "answer": "SILENT"
   },
   {
+    "id": 7,
     "question": "What is the missing number? 15, 30, 45, ?, 75",
     "options": ["50", "55", "60", "65"],
     "answer": "60"
   },
   {
+    "id": 8,
     "question": "A rectangle has a length of 12 cm and width of 5 cm. What is its area?",
     "options": ["17 cm²", "24 cm²", "50 cm²", "60 cm²"],
     "answer": "60 cm²"
