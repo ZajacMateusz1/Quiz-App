@@ -1,6 +1,9 @@
+import { useContext } from "react";
+import GameContext from "../../store/game-context.jsx";
 import Button from "./Button.jsx";
 import startScreen from "../assets/StartScreen.png";
-export default function StartScreen({ changeGameStatus }) {
+export default function StartScreen() {
+  const { handleChangeGameStatus } = useContext(GameContext);
   return (
     <>
       <img
@@ -12,7 +15,7 @@ export default function StartScreen({ changeGameStatus }) {
         Challenge yourself with a fun math quiz full of calculations and logic
         puzzles to test your skills!
       </p>
-      <Button onClick={changeGameStatus}>Start Quiz</Button>
+      <Button onClick={handleChangeGameStatus}>Start Quiz</Button>
     </>
   );
 }

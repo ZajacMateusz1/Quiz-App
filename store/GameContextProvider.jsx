@@ -1,0 +1,31 @@
+import { useState } from "react";
+import GameContext from "./game-context.jsx";
+export default function GameContextProvider({ children }) {
+  const [gameStatus, setGameStatus] = useState("start");
+  function handleChangeGameStatus() {
+    if (gameStatus === "start") {
+      setGameStatus("inProgress");
+    } else if (gameStatus === "inProgress") {
+      setGameStatus("end");
+    }
+  }
+  const [currentIndex, setCurrentIndex] = useState(0);
+  function handleNextQuestion() {
+    setCurrentIndex((prev) => prev + 1);
+  }
+  function handlePrevQuestion() {
+    if (currentIndex < 1) return;
+    setCurrentIndex((prev) => prev - 1);
+  }
+  const gameCTX = {
+    gameStatus: gameStatus,
+    handleChangeGameStatus: handleChangeGameStatus,
+    userAnswers: {},
+    currentIndex: currentIndex,
+    handleNextQuestion: handleNextQuestion,
+    handlePrevQuestion: handlePrevQuestion,
+  };
+  return (
+    <GameContext.Provider value={gameCTX}>{children}</GameContext.Provider>
+  );
+}
