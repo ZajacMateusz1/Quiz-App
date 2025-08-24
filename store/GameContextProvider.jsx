@@ -9,21 +9,22 @@ export default function GameContextProvider({ children }) {
       setGameStatus("end");
     }
   }
+  const [userScore, setUserScore] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   function handleNextQuestion() {
     setCurrentIndex((prev) => prev + 1);
   }
-  function handlePrevQuestion() {
-    if (currentIndex < 1) return;
-    setCurrentIndex((prev) => prev - 1);
+  function handleUpdateUserScore() {
+    setUserScore((prev) => prev + 1);
   }
+
   const gameCTX = {
     gameStatus: gameStatus,
     handleChangeGameStatus: handleChangeGameStatus,
-    userAnswers: {},
+    userScore: userScore,
     currentIndex: currentIndex,
     handleNextQuestion: handleNextQuestion,
-    handlePrevQuestion: handlePrevQuestion,
+    handleUpdateUserScore: handleUpdateUserScore,
   };
   return (
     <GameContext.Provider value={gameCTX}>{children}</GameContext.Provider>

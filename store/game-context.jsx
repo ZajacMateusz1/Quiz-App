@@ -3,9 +3,9 @@ import { createContext } from "react";
 const GameContext = createContext({
   gameStatus: "",
   handleChangeGameStatus: () => {},
-  userAnswers: {},
+  userScore: 0,
   currentIndex: 0,
   handleNextQuestion: () => {},
-  handlePrevQuestion: () => {},
+  handleUpdateUserScore: () => {},
 });
 export default GameContext;
