@@ -23,7 +23,9 @@ export default function QuizScreen() {
   useEffect(() => {
     setSelected(null);
     const timer = setTimeout(() => {
-      handleNextQuestion();
+      currentIndex + 1 === questionLength
+        ? handleChangeGameStatus()
+        : handleNextQuestion();
     }, TIME);
     return () => {
       clearTimeout(timer);
