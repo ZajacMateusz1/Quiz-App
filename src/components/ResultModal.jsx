@@ -2,7 +2,7 @@ import { useContext } from "react";
 import GameContext from "../../store/game-context.jsx";
 import Button from "./Button.jsx";
 export default function ResultModal() {
-  const { userScore, questionLength } = useContext(GameContext);
+  const { userScore, questionLength, handleRestart } = useContext(GameContext);
   return (
     <dialog
       open
@@ -19,7 +19,7 @@ export default function ResultModal() {
           <span>Answered incorrectly</span>
         </p>
       </div>
-      <Button>Restart</Button>
+      <Button onClick={handleRestart}>Restart</Button>
     </dialog>
   );
 }
