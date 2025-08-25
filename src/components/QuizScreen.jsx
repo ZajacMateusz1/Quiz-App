@@ -10,6 +10,7 @@ export default function QuizScreen() {
     handleNextQuestion,
     handleChangeGameStatus,
     handleUpdateUserScore,
+    questionLength,
   } = useContext(GameContext);
   const [selected, setSelected] = useState(null);
   const question = QUESTIONS[currentIndex];
@@ -58,15 +59,15 @@ export default function QuizScreen() {
       </div>
       <Button
         onClick={
-          currentIndex + 1 === QUESTIONS.length
+          currentIndex + 1 === questionLength
             ? handleChangeGameStatus
             : handleNextQuestion
         }
       >
-        {currentIndex + 1 === QUESTIONS.length ? "End" : "Next"}
+        {currentIndex + 1 === questionLength ? "End" : "Next"}
       </Button>
       <p className="pt-4">
-        Questions: {currentIndex + 1}/{QUESTIONS.length}
+        Questions: {currentIndex + 1}/{questionLength}
       </p>
     </div>
   );

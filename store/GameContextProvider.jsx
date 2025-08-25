@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import GameContext from "./game-context.jsx";
+import QUESTIONS from "../src/QUESTIONS.json";
 export default function GameContextProvider({ children }) {
   const [gameStatus, setGameStatus] = useState("start");
   function handleChangeGameStatus() {
@@ -21,7 +22,8 @@ export default function GameContextProvider({ children }) {
   const gameCTX = {
     gameStatus: gameStatus,
     handleChangeGameStatus: handleChangeGameStatus,
-    userScore: userScore,
+    userScore: userScore.current,
+    questionLength: QUESTIONS.length,
     currentIndex: currentIndex,
     handleNextQuestion: handleNextQuestion,
     handleUpdateUserScore: handleUpdateUserScore,
