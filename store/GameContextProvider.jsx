@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import GameContext from "./game-context.jsx";
 export default function GameContextProvider({ children }) {
   const [gameStatus, setGameStatus] = useState("start");
@@ -9,13 +9,13 @@ export default function GameContextProvider({ children }) {
       setGameStatus("end");
     }
   }
-  const [userScore, setUserScore] = useState(0);
+  const userScore = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   function handleNextQuestion() {
     setCurrentIndex((prev) => prev + 1);
   }
   function handleUpdateUserScore() {
-    setUserScore((prev) => prev + 1);
+    userScore.current++;
   }
 
   const gameCTX = {
