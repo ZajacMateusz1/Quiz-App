@@ -1,13 +1,11 @@
 import { useContext } from "react";
 import GameContext from "../../store/game-context.jsx";
 import Button from "./Button.jsx";
-export default function ResultModal() {
-  const { userScore, questionLength, handleRestart } = useContext(GameContext);
+export default function ResultScreen() {
+  const { userScore, questionLength, handleRestart, userAnswers } =
+    useContext(GameContext);
   return (
-    <dialog
-      open
-      className="abslute top-1/2 left-1/2 -translate-1/2 bg-neutral-300 p-8 rounded-b-md"
-    >
+    <div className="bg-neutral-300 p-8 rounded-b-md">
       <h2 className="font-bold text-2xl uppercase mb-3">Quiz Completed!</h2>
       <div className="stats flex gap-4 mb-4">
         <p className="flex flex-col">
@@ -20,6 +18,11 @@ export default function ResultModal() {
         </p>
       </div>
       <Button onClick={handleRestart}>Restart</Button>
-    </dialog>
+      <ol>
+        {userAnswers.map((answerObj) => {
+          return <li key={answerObj.number}>{answerObj.answer}</li>;
+        })}
+      </ol>
+    </div>
   );
 }

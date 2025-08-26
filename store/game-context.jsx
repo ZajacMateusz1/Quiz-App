@@ -7,5 +7,8 @@ const GameContext = createContext({
   currentIndex: 0,
   handleNextQuestion: () => {},
   handleUpdateUserScore: () => {},
+  handleRestart: () => {},
+  userAnswers: {},
+  handleAddAnswer: () => {},
 });
 export default GameContext;

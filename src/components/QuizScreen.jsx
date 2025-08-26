@@ -11,12 +11,15 @@ export default function QuizScreen() {
     handleChangeGameStatus,
     handleUpdateUserScore,
     questionLength,
+    handleAddAnswer,
   } = useContext(GameContext);
   const [selected, setSelected] = useState(null);
   const question = QUESTIONS[currentIndex];
   function handleSelect(answer) {
+    const correct = answer === question.answer;
     setSelected(answer);
-    if (answer === question.answer) {
+    handleAddAnswer(answer, correct, currentIndex + 1);
+    if (correct) {
       handleUpdateUserScore();
     }
   }
