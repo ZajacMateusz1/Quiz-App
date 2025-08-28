@@ -13,7 +13,7 @@ export default function QuizScreen() {
     questionLength,
     handleAddAnswer,
   } = useContext(GameContext);
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState("");
   const question = QUESTIONS[currentIndex];
   function handleSelect(answer) {
     const correct = answer === question.answer;
@@ -36,7 +36,7 @@ export default function QuizScreen() {
   }, [currentIndex]);
 
   return (
-    <div className="bg-neutral-300 p-4 rounded-lg w-3/4">
+    <div className="p-4 rounded-lg  w-full">
       <h3 className="mb-4 text-2xl font-bold">{question.question}</h3>
       <ProgressBar time={TIME} />
       <div className="answers flex flex-col gap-2 mb-4">

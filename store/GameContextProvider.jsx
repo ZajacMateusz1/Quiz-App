@@ -30,7 +30,6 @@ export default function GameContextProvider({ children }) {
       ...prev,
       { answer: answer, correct: correct, number: number },
     ]);
-    console.log(userAnswers);
   }
 
   const gameCTX = {
