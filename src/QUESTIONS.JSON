@@ -19,21 +19,21 @@
   },
   {
     "id": 4,
-    "question": "At 3:15, what is the smaller angle between the hour and minute hands?",
-    "options": ["0°", "7.5°", "30°", "45°"],
-    "answer": "7.5°"
+    "question": "What is the value of 7×(8+2)",
+    "options": ["56", "70", "140", "72"],
+    "answer": "70"
   },
   {
     "id": 5,
-    "question": "A train travels 60 km in 1 hour 30 minutes. What is its average speed?",
-    "options": ["30 km/h", "40 km/h", "60 km/h", "80 km/h"],
-    "answer": "40 km/h"
+    "question": "What is the area of a circle with radius 7 cm?",
+    "options": ["49π cm2", "77π cm2", "14π cm2", "21π cm2"],
+    "answer": "49π cm2"
   },
   {
     "id": 6,
-    "question": "If you rearrange the letters of “LISTEN”, which word can you also form?",
-    "options": ["SILENT", "STONE", "LINES", "TILES"],
-    "answer": "SILENT"
+    "question": "What is the value of sin0° ?",
+    "options": ["0", "1", "1/2", "√2/2"],
+    "answer": "0"
   },
   {
     "id": 7,
