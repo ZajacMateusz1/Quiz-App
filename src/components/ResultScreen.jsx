@@ -6,8 +6,10 @@ export default function ResultScreen() {
     useContext(GameContext);
   return (
     <div className=" p-8 rounded-b-md">
-      <h2 className="font-bold text-3xl uppercase mb-3">Quiz Completed!</h2>
-      <div className="stats flex justify-around mb-4">
+      <h2 className="font-bold text-3xl uppercase mb-4 md:text-5xl">
+        Quiz Completed!
+      </h2>
+      <div className="stats flex justify-around mb-4 md:text-xl">
         <p className="flex flex-col text-green-500">
           <span>{(userScore / questionLength) * 100}%</span>
           <span>Correct</span>
@@ -20,12 +22,14 @@ export default function ResultScreen() {
       <Button onClick={handleRestart}>Restart</Button>
       {Object.keys(userAnswers).length > 0 && (
         <>
-          <h3 className="text-xl mt-4 font-bold uppercase">Your answers:</h3>
+          <h3 className="text-xl mt-4 font-bold uppercase md:text-2xl">
+            Your answers:
+          </h3>
           <ol>
             {userAnswers.map((answerObj) => {
               return (
-                <li key={answerObj.number}>
-                  <p className="mt-2">Question {answerObj.number}:</p>
+                <li className="md:text-lg" key={answerObj.number}>
+                  <p className="mt-1">Question {answerObj.number}:</p>
                   <p
                     className={`${
                       answerObj.correct ? "text-green-500" : `text-red-500`

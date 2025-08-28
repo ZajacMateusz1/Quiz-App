@@ -39,9 +39,10 @@ export default function QuizScreen() {
     <div className="p-4 rounded-lg  w-full">
       <h3 className="mb-4 text-2xl font-bold">{question.question}</h3>
       <ProgressBar time={TIME} />
-      <div className="answers flex flex-col gap-2 mb-4">
+      <div className="answers flex flex-col gap-2 mb-4 items-center">
         {question.options.map((questionOption) => {
-          let styles = "bg-stone-100";
+          let styles =
+            "bg-white md:hover:bg-stone-200 transition md:cursor-pointer";
           if (selected) {
             if (question.answer === questionOption) {
               styles = "bg-green-200";
@@ -54,7 +55,7 @@ export default function QuizScreen() {
                 handleSelect(questionOption);
               }}
               key={questionOption}
-              className={`p-1 border ${styles}`}
+              className={`p-1 border ${styles} w-3/4 md:w-1/2`}
               disabled={selected}
             >
               {questionOption}
