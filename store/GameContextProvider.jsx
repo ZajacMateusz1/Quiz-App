@@ -1,21 +1,22 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
 import GameContext from "./game-context.jsx";
 import QUESTIONS from "../src/QUESTIONS.json";
 export default function GameContextProvider({ children }) {
   const [gameStatus, setGameStatus] = useState("start");
-  function handleChangeGameStatus() {
+  const handleChangeGameStatus = useCallback(() => {
     if (gameStatus === "start") {
       setGameStatus("inProgress");
     } else if (gameStatus === "inProgress") {
       setGameStatus("end");
     }
-  }
+  }, [gameStatus]);
+
   const userScore = useRef(0);
   const [userAnswers, setUserAnswers] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  function handleNextQuestion() {
+  const handleNextQuestion = useCallback(() => {
     setCurrentIndex((prev) => prev + 1);
-  }
+  }, []);
   function handleUpdateUserScore() {
     userScore.current++;
   }

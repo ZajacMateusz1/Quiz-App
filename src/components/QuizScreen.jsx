@@ -1,9 +1,9 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useLayoutEffect } from "react";
 import GameContext from "../../store/game-context.jsx";
 import Button from "./Button.jsx";
 import ProgressBar from "./ProgressBar.jsx";
 import QUESTIONS from "../QUESTIONS.json";
-const TIME = 5000;
+const TIME = 10000;
 export default function QuizScreen() {
   const {
     currentIndex,
@@ -23,8 +23,10 @@ export default function QuizScreen() {
       handleUpdateUserScore();
     }
   }
-  useEffect(() => {
+  useLayoutEffect(() => {
     setSelected(null);
+  }, [currentIndex]);
+  useEffect(() => {
     const timer = setTimeout(() => {
       currentIndex + 1 === questionLength
         ? handleChangeGameStatus()
@@ -33,7 +35,12 @@ export default function QuizScreen() {
     return () => {
       clearTimeout(timer);
     };
-  }, [currentIndex]);
+  }, [
+    currentIndex,
+    handleChangeGameStatus,
+    questionLength,
+    handleNextQuestion,
+  ]);
 
   return (
     <div className="p-4 rounded-lg  w-full">

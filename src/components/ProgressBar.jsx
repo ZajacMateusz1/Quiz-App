@@ -11,6 +11,6 @@ export default function ProgressBar({ time }) {
       clearInterval(interval);
       setRemainingTime(time);
     };
-  }, [currentIndex]);
+  }, [currentIndex, time]);
   return <progress value={remainingTime} max={time}></progress>;
 }

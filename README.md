@@ -1,12 +1,27 @@
-# React + Vite
+# Math Quiz 🧮
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live demo: https://zajacmateusz1.github.io/Quiz-App/
 
-Currently, two official plugins are available:
+## Mój profil na GitHub: [ZajacMateusz1](https://github.com/ZajacMateusz1)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Opis
 
-## Expanding the ESLint configuration
+Aplikacja quizowa napisana w React, która pozwala sprawdzić swoje umiejętności matematyczne oraz logiczne.  
+Quiz składa się z pytań wielokrotnego wyboru, a wynik prezentowany jest po zakończeniu rozgrywki.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Funkcje
+
+- Ekran startowy z opisem quizu i przyciskiem Start.
+- Wybiernie pytania z pliku `QUESTIONS.json`.
+- Licznik punktów oraz procentowe statystyki poprawnych i błędnych odpowiedzi.
+- Licznik czasu (progress bar) dla każdego pytania.
+- Kolorowe podświetlanie poprawnych i błędnych odpowiedzi.
+- Historia odpowiedzi użytkownika.
+- Możliwość restartu quizu po jego zakończeniu.
+
+## Technologie
+
+- React 19 + Vite.
+- Tailwind CSS.
+- Context API do zarządzania stanem globalnym.
+- React Hooks (useState, useEffect, useLayoutEffect, useContext, useCallback, useRef).
