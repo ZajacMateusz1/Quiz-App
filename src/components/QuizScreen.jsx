@@ -2,7 +2,7 @@ import { useContext, useState, useEffect, useLayoutEffect } from "react";
 import GameContext from "../../store/game-context.jsx";
 import Button from "./Button.jsx";
 import ProgressBar from "./ProgressBar.jsx";
-import QUESTIONS from "../QUESTIONS.json";
+import QUESTIONS from "../../QUESTIONS.json";
 const TIME = 10000;
 export default function QuizScreen() {
   const {

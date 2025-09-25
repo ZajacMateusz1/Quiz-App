@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback } from "react";
 import GameContext from "./game-context.jsx";
-import QUESTIONS from "../src/QUESTIONS.json";
+import QUESTIONS from "../QUESTIONS.json";
 export default function GameContextProvider({ children }) {
   const [gameStatus, setGameStatus] = useState("start");
   const handleChangeGameStatus = useCallback(() => {
